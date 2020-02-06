@@ -1,0 +1,50 @@
+<!-- Header -->
+<%- include('header') %>
+<!-- End Header -->
+
+<div class="header-title">
+    <h2><a href="/">Filmovi</a></h2>
+    <h2>Rezervacije</h2>
+    <p>Cena karte: 250 din.</p>
+</div>
+
+<form action="" method="POST">
+    <div id="reservation" class="content">
+        <div class="seats-wrapper">
+            <% data.forEach(function(val, i) { %>
+            <div class="seat">
+                <%= val.seat_number %>
+                <input <% if(val.status) { %>disabled<% } %> id="checkbox<%= i %>" class="checkbox-custom" name="seat[]"
+                    type="checkbox" value="<%= val.id %>">
+                <label for="checkbox<%= i %>"
+                    class="checkbox-custom-label <% if(val.status) { %>disabled<% } %>"></label>
+            </div>
+
+            <% }); %>
+        </div>
+        <div class="reservation-form">
+            <h4>Rezervisi kartu:</h4>
+            <div class="fields">
+                <div class="form-group">
+                    <label for="name">Unesite vase ime:</label>
+                    <input id="name" type="text" name="name">
+                </div>
+                <p>Broj karata:<span id="tickets_number">0</span>
+                </p>
+                <p>Ukupna cena:<span id="tickets_price">0</span> din.
+                </p>
+            </div>
+            <div class="actions">
+                <input id="ticket_hidden_price" type="hidden" value="0" name="price">
+                <button type="submit">Rezervisi</button>
+
+                <a class="reset" href="<%= resetUrl %>/reset/<%= data[0].hall_id %>">Reset seats</a>
+            </div>
+        </div>
+    </div>
+
+</form>
+
+<!-- footer -->
+<%- include('footer') %>
+<!-- End Footer -->

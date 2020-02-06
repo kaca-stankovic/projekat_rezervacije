@@ -1,0 +1,22 @@
+<!-- Header -->
+<%- include('header') %>
+<!-- End Header -->
+
+<div class="message">
+    <h1>Rezervacija je uspesno obavljena!</h1>
+    <h3>Informacije: </h3>
+    <p>ID Rezervacije: <span><%= data.id %></span></p>
+    <p>Rezervisano na ime: <span><%= data.user_name %></span></p>
+    <p>Naziv Filma: <span><%= data.name %></span></p>
+    <img class="movie_img" src="/images/<%= data.image %>" alt="">
+    <p>Godina: <span><%= data.year %></span></p>
+    <p>Naziv sale: <span><%= data.hall_name %></span></p>
+    <p>Broj karata: <span><%= data.seats.length %></span></p>
+    <p>Ukupna cena karata: <span><%= data.price %></span> din.</p>
+    <p>Broj sedista: <span><%= data.seats %></span></p>
+    <a href="<% backUrl %>"><button>Nazad</button></a>
+</div>
+
+<!-- footer -->
+<%- include('footer') %>
+<!-- End Footer -->

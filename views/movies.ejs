@@ -1,0 +1,35 @@
+<!-- Header -->
+<%- include('header') %>
+<!-- End Header -->
+
+<div class="content">
+    <div class="container">
+        <div class="header-title">
+            <h2>Filmovi</h2>
+        </div>
+        <div class="movies-wrapper">
+            <% for(var i=0; i< result.length;i++) { %>
+
+            <div class="movies-item">
+                <a href="./reservation/<%- result[i].id %>">
+                    <div class="cover">
+                        <div class="cover-overlay"></div>
+                        <div class="colored-overlay"></div>
+                        <img src="./images/<%= result[i].image %>" alt="">
+                    </div>
+                    <div class="movie-details">
+                        <div class="movie-name"><%- result[i].name %></div>
+                        <div class="movie-year"><%- result[i].year %></div>
+                    </div>
+                </a>
+            </div>
+
+            <% } %>
+        </div>
+    </div>
+</div>
+
+
+<!-- footer -->
+<%- include('footer') %>
+<!-- End Footer -->

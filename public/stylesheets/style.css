@@ -1,0 +1,266 @@
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+body,
+html {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}
+
+a {
+  color: #00b7ff;
+  text-decoration: none;
+}
+
+/* Colors */
+
+/* Content */
+.content {
+  padding: 20px 0px;
+}
+
+.container {
+  max-width: 1140px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+}
+
+/* Movies Page */
+.movies-wrapper {
+  display: flex;
+}
+
+.movies-wrapper .movies-item {
+  flex: 1;
+  margin: 0px 10px;
+  border-radius: 12px;
+  box-shadow: 0px 3px 6px rgba(128, 128, 128, 0.15);
+  background-color: #2c2d32;
+  transition: 0.3s;
+  overflow: hidden;
+  cursor: pointer;
+}
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 92px;
+}
+
+.movie-name {
+  font-size: 1.2rem;
+  padding: 10px 0px;
+  margin-top: 5px;
+  text-align: center;
+  color: #fff;
+}
+
+.movie-year {
+  padding: 5px 0px;
+  text-align: center;
+  color: rgb(180, 180, 180);
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+}
+
+.cover {
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.movies-wrapper .movies-item:hover {
+  box-shadow: 0px 3px 20px 0px rgba(0, 0, 0, 0.81);
+}
+
+.colored-overlay {
+  background: rgba(0, 90, 255, 0.5);
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+
+.movies-wrapper .movies-item:hover .colored-overlay {
+  opacity: 1;
+}
+
+.cover-overlay {
+  background: rgb(44, 45, 50);
+  background: linear-gradient(
+    0deg,
+    rgba(44, 45, 50, 1) 0%,
+    rgba(15, 23, 34, 0) 100%
+  );
+  z-index: 1;
+  position: absolute;
+  transition: 0.3s;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Reservations Page*/
+
+#reservation {
+  display: flex;
+}
+
+.reservation-form {
+  padding: 20px;
+  background-color: #0f2f54;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.reservation-form p {
+  font-size: 1.3rem;
+}
+
+.reservation-form .form-group input {
+  padding: 6px 10px;
+  border: none;
+  margin: 5px 0px;
+}
+
+.message {
+  width: 40%;
+  margin: auto;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.message button {
+  width: 150px;
+}
+
+.message .movie_img {
+  width: 160px;
+}
+
+button {
+  width: 100%;
+  background-color: #00b7ff;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  padding: 10px 0px;
+  margin: 5px 0px;
+  cursor: pointer;
+}
+
+.reservation-form .reset {
+  display: block;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.seats-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 350px;
+}
+
+.seats-wrapper .seat {
+  width: calc(100% / 8);
+  height: 53px;
+  padding: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.seats-wrapper .seat {
+  position: relative;
+}
+
+.seats-wrapper .seat:hover i {
+  color: red;
+}
+
+.seats-wrapper .seat.closed i {
+  color: red;
+}
+
+/* Footer */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Styling Reservation Checkbox */
+/* only demo styles */
+
+.checkbox-custom {
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+}
+
+.checkbox-custom,
+.checkbox-custom-label {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.checkbox-custom-label {
+  position: relative;
+}
+
+.checkbox-custom-label.disabled::before {
+  color: #bdbdbd;
+}
+
+.checkbox-custom + .checkbox-custom-label:before {
+  content: "\f4b8";
+  background: #fff;
+  /* border: 2px solid #ddd; */
+  display: inline-block;
+  vertical-align: middle;
+  width: 30px;
+  height: 25px;
+  padding: 2px;
+  font-size: 1.5rem;
+  margin-right: 10px;
+  text-align: center;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  -webkit-font-smoothing: antialiased;
+}
+
+.checkbox-custom:checked + .checkbox-custom-label::before {
+  /* background: rebeccapurple; */
+  color: red;
+}
+
+.checkbox-custom:focus + .checkbox-custom-label {
+  outline: 1px solid #ddd; /* focus style */
+}
